@@ -2,18 +2,20 @@
 
 using namespace std;
 
-float sqaure_root(int number, int power, int decimal_point);
+double sqaure_root(int number, int power, int decimal_point);
+double newton_method(int number, int power);
 
 int main()
 {
-    cout << sqaure_root(531610, 2, 10);
+    //cout << sqaure_root(531610, 2, 10);
+    cout << newton_method(500, 2);
 }
 
-float sqaure_root(int number, int power, int decimal_point) {
-    float x = 1;
-    float check = 1;
-    float y;
-    float result, before_result;
+double sqaure_root(int number, int power, int decimal_point) {
+    double x = 1;
+    double check = 1;
+    double y;
+    double result, before_result;
     while (pow(x, power) <= number) {
         result = x;
         x++;
@@ -28,4 +30,17 @@ float sqaure_root(int number, int power, int decimal_point) {
     }
     return result;
 }
+
+double newton_method(int number, int power) {
+    double result, y, z;
+    for (int i = 0; i < 10; i++) {
+        if (i == 0) { result = 1; }
+        y = pow(result, power) - number;
+        z = power * (pow(result, power - 1));
+        result = result - (y / z);
+    }
+    return result;
+}
+
+
 
