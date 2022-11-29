@@ -8,12 +8,15 @@ double powerfun(double a, double n);
 
 int main()
 {
-    cout << sqaure_root(125, 3, 10) << "\n";
-    cout << sqaure_root(25, 2, 10) << "\n";
-    cout << sqaure_root(531610, 2, 10) << "\n";
-    cout << newton_method(125, 3) << "\n";
-    cout << newton_method(25, 2) << "\n";
-    cout << newton_method(531610, 2) << "\n";
+    cout << sqaure_root(125, 3, 10) << "\n"; // wynik 5
+    cout << sqaure_root(25, 2, 10) << "\n"; // wynik 5
+    cout << sqaure_root(500, 2, 10) << "\n"; // wynik 22 powinno byc 22.360
+    cout << sqaure_root(531610, 2, 10) << "\n"; // wynik 729 powinno byc 729.115
+    cout << newton_method(125, 3) << "\n"; // wynik 5
+    cout << newton_method(25, 2) << "\n"; // wynik 5
+    cout << newton_method(500, 2) << "\n"; // wynik 22.3607
+    cout << newton_method(531610, 2) << "\n"; // wynik 822.644 powinno byc 729.115
+
 }
 
 //funkcja potegi
@@ -58,7 +61,4 @@ double newton_method(int number, int power) {
     }
     return result;
 }
-
-
-
 
